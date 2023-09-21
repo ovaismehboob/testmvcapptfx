@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testmvcapptfx
+  labels:
+    app: testmvcapptfx
+  namespace: namespace-workflow-1695287475687
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testmvcapptfx
+  template:
+    metadata:
+      labels:
+        app: testmvcapptfx
+    spec:
+      containers:
+        - name: testmvcapptfx
+          image: codetoaks.azurecr.io/image-workflow-1695287475687:latest
+          ports:
+            - containerPort: 5000
